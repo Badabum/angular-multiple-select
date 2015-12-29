@@ -1,0 +1,106 @@
+.bz-select-multiple.container{
+    box-sizing: border-box;
+    width:100%;
+    position: relative;
+}
+.bz-select-multiple .selection-container{
+    width:100%;
+    height:35px;
+    padding:2px 5px 2px 5px;
+    border: 2px solid #f7f7f7;
+    box-sizing: border-box;
+}
+
+.bz-select-multiple .selection-container .select-arrow{
+    float: right;
+    padding-top:7px;
+    
+}
+.bz-select-multiple .selection-container .select-arrow:hover{
+    cursor:pointer;
+    transform: scale(1.1);
+}
+.bz-select-multiple .selected-options-container{
+    line-height: 30px;
+}
+.bz-select-multiple .selected-options-container .selected-item-template{
+    padding:5px;
+    border-radius:3px;
+    background-color: #93e687;
+    margin-right: 3px;
+}
+.bz-select-multiple .selected-options-container .selected-item-template .ion-close{
+    color:white;
+    font-size:12px;
+}
+.bz-select-multiple .options-container{
+    position:absolute;
+    width:inherit;
+    z-index:100;
+    background-color:aliceblue;
+    padding-bottom: 5px;
+}
+.bz-select-multiple .clear{
+    clear: both;
+    visibility: hidden;
+}
+.bz-select-multiple .option{
+    box-sizing: border-box;
+    display: inline-block;
+    padding:5px;
+    border-radius:3px;
+    background-color: #f7f7f7;
+    border:2px solid #green;
+    margin:2px;
+}
+.bz-select-multiple .option:hover{
+    cursor:pointer;
+    background-color: #ddd;
+}
+.bz-select-multiple .option.selected{
+    background-color: #ddd;
+}
+.bz-select-multiple .option.selected:hover{
+    cursor: auto;
+}
+.bz-select-multiple .advanced-options{
+    text-align: left;
+}
+.bz-select-multiple .advanced-options hr{
+        margin: 2px 0px 2px 0px;
+}
+.bz-select-multiple .advanced-options ul{
+    list-style: none;
+    margin: 0px;
+    padding: 5px;
+}
+.bz-select-multiple .advanced-options ul li{
+    width:100%;
+    margin-top:2px;
+}
+.bz-select-multiple .advanced-options .search-input{
+    width:100%;
+    height:30px;
+    padding-left:10px;
+    border:1px solid #ddd;
+}
+.bz-select-multiple .advanced-options .advanced-option-btn{
+    width:100%;
+    border:none;
+    background-color: #ddd;
+    
+}
+.bz-select-multiple .advanced-options .advanced-option-btn:hover{
+    cursor:pointer;
+    background-color: #f7f7f7;
+}
+.bz-select-multiple .advanced-options .advanced-option-btn.select-all-btn:before{
+    content: "\f122";
+    font-family: "Ionicons";
+    float: left
+}
+.bz-select-multiple .advanced-options .advanced-option-btn.unselect-all-btn:before{
+    content:"\f12a";
+    font-family: "Ionicons";
+    float: left;
+}
