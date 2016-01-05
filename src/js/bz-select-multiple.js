@@ -1,7 +1,11 @@
 angular.module("bz.select-multiple",["angular.filter"]);
 angular.module("bz.select-multiple")
     .directive('bzSelectMultiple',function($parse){
-        var selectOption = function(selectedCollection, item){
+        var selectOption = function(selectedCollection, item,id){
+           var index = _.findIndex(selectedCollection,function(selectedItem){
+              return  selectedItem[id]===item[id];
+           });
+           if(index===-1)
            selectedCollection.push(item);
         }
         var selectAll = function(allItems,selectedCollection,id){
@@ -60,7 +64,7 @@ angular.module("bz.select-multiple")
         return{
             restrict:"E",
             replace:true,
-            templateUrl:"/src/tmpl/bz-select-multiple.html",
+            templateUrl:"/templates/bz-select-multiple.html",
             require:"ngModel",
             scope:{
                 items:"=items",
@@ -83,7 +87,7 @@ angular.module("bz.select-multiple")
                 }
                 scope.advancedOptionsEnabled = scope.checkAll|scope.searchEnabled;
                 scope.selectOption = function(item){
-                    selectOption(scope.selectedCollection,item);
+                    selectOption(scope.selectedCollection,item,scope.id);
                     ngModel.$setViewValue(scope.selectedCollection);
                 }
                 scope.isSelected = function(item){
