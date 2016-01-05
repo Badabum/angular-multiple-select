@@ -34,5 +34,6 @@ module.exports = function(grunt){
     grunt.loadNpmTasks('grunt-ng-annotate');
     grunt.loadNpmTasks('grunt-angular-templates');
     grunt.registerTask('jshint',['jshint']);
+    grunt.registerTask('default',['ngAnnotate', 'ngtemplates']);
     grunt.registerTask('annotate',['ngAnnotate']);
 }
