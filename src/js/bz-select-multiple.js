@@ -40,6 +40,20 @@ angular.module("bz.select-multiple")
                 selectedCollection.splice(index,1);
             }
         }
+        var removeFromSelected = function(selectedCollection, allItems,id){
+            var items = [];
+            _.forEach(selectedCollection,function(selectedItem){
+                var index = _.findIndex(allItems,function(item){
+                    return selectedItem[id]===item[id];
+                })
+                if(index>-1)
+                items.push(selectedCollection[index]);
+            });
+            selectedCollection.splice(0,selectedCollection.length);
+            _.forEach(items,function(item){
+                selectedCollection.push(item);
+            });
+        }
         var activate = function(allItems,selectedItems,id){
 
         }
@@ -60,7 +74,6 @@ angular.module("bz.select-multiple")
                 id:"=id"
             },
             link:function(scope,element,attrs,ngModel){
-                
                 scope.filterString = {text:""};
                 scope.opened = false;
                 scope.unselectOption = function(item){
@@ -87,6 +100,14 @@ angular.module("bz.select-multiple")
                     unselectAll(scope.selectedCollection);
                     ngModel.$setViewValue(scope.selectedCollection);
                 }
+                scope.$watch(function(){
+                    return scope.items.length;
+                },function(newVal,oldVal){
+                    //item was removed from collection outside directive
+                    if(newVal<oldVal){
+                        removeFromSelected(scope.selectedCollection,scope.items,scope.id);
+                    }
+                });
             }
         }
 });

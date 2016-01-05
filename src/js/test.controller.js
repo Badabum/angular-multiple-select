@@ -14,4 +14,7 @@ angular.module('bz.select-multiple').controller('mainCtrl',function($scope){
         };
         self.collection.push(newItem);
     }
+    self.removeItem = function(){
+        self.collection.splice(0,1);
+    }
 })
