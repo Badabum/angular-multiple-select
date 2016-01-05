@@ -15,11 +15,12 @@ module.exports = function(grunt){
             }
         },
         ngtemplates:{
-            app:{
-                src:"src/tmpl/*.html",
+            'bz.select-multiple':{
+                cwd:"src/tmpl/",
+                src:"*.html",
                 dest:"src/dist/bz-select-multiple.min.js",
                 options:{
-                    prefix:"templates/",
+                    prefix:"/templates/",
                     append:true,
                     htmlmin:{
                         collapseWhitespace: true,

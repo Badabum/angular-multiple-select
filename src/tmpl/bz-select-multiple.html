@@ -20,14 +20,17 @@
                </li>
                 <li class="advanced-option" ng-if="checkAll">
                     <button class="advanced-option-btn select-all-btn" ng-click="selectAll()">select all</button>
-                </li>
-                <li class="advanced-option" ng-if="checkAll">
                     <button class="advanced-option-btn unselect-all-btn" ng-click="unselectAll()">unselect all</button>
                 </li>
+<!--
+                <li class="advanced-option" ng-if="checkAll">
+
+                </li>
+-->
                 <hr/>
             </ul>
        </div>
-        <div class="option" ng-repeat="item in filteredItems" ng-click="!item.selected&&selectOption(item)" ng-class="{'selected':item.selected}">
+        <div class="option" ng-repeat="item in items|filterBy:[label]:filterString.text" ng-click="!item.selected&&selectOption(item)" ng-class="{'selected':isSelected(item)}">
            <span class="option-label">{{item[label]}}</span>
         </div>
     </div>

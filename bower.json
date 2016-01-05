@@ -1,4 +1,8 @@
 {
     "name": "angular-multiple-select",
-    "dependencies": {}
+    "dependencies": {
+        "lodash":"latest",
+        "angular":"latest",
+        "angular-filter":"latest"
+    }
 }

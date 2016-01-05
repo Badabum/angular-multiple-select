@@ -7,4 +7,11 @@ angular.module('bz.select-multiple').controller('mainCtrl',function($scope){
     },function(){
        console.log(self.selectedCollection);
     },true);
+    self.addItem = function(){
+        var newItem = {
+            id:4,
+            name:"Item4"
+        };
+        self.collection.push(newItem);
+    }
 })
