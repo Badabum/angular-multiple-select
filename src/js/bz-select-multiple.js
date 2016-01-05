@@ -1,6 +1,6 @@
 angular.module("bz.select-multiple",["angular.filter"]);
 angular.module("bz.select-multiple")
-    .directive('bzSelectMultiple',function($parse){
+    .directive('bzSelectMultiple',function($parse,$document,$timeout){
         var selectOption = function(selectedCollection, item,id){
            var index = _.findIndex(selectedCollection,function(selectedItem){
               return  selectedItem[id]===item[id];
@@ -112,6 +112,15 @@ angular.module("bz.select-multiple")
                         removeFromSelected(scope.selectedCollection,scope.items,scope.id);
                     }
                 });
+                $document.on("click",function(){
+                    $timeout(function(){
+                        if(scope.opened)
+                            scope.opened = false;
+                    })
+                })
+                element.on('click',function(event){
+                    event.stopPropagation();
+                })
             }
         }
 });
