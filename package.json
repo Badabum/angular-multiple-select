@@ -1,0 +1,31 @@
+{
+  "name": "angular-multiple-select",
+  "version": "1.0.0",
+  "description": "фтпг\u001b[2~ф�angular directive for selecting multiple elements",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Badabum/angular-multiple-select.git"
+  },
+  "keywords": [
+    "angular",
+    "select",
+    "multiple",
+    "multiple",
+    "select"
+  ],
+  "author": "Ihor Korotenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Badabum/angular-multiple-select/issues"
+  },
+  "homepage": "https://github.com/Badabum/angular-multiple-select#readme",
+  "devDependencies": {
+    "grunt-angular-templates": "^0.5.9",
+    "grunt-contrib-jshint": "^0.11.3",
+    "grunt-ng-annotate": "^1.0.1"
+  }
+}
